@@ -9,7 +9,7 @@ module JwtMe
     attr_reader :storage
 
     VALIDATORS = {
-      'email' => EmailValidator
+      'email' => JwtMe::EmailValidator
     }.freeze
 
     def initialize
@@ -33,7 +33,7 @@ module JwtMe
       value = ask "Enter #{key} value:"
       validate(key, value)
       @storage[key] = value
-    rescue ValidationError => e
+    rescue JwtMe::ValidationError => e
       say e.to_s
       ask_value(key)
     end

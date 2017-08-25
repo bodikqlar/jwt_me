@@ -1,1 +1,1 @@
-ValidationError = Class.new(StandardError)
+JwtMe::ValidationError = Class.new(StandardError)
